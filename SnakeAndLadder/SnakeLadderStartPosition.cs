@@ -6,12 +6,13 @@ namespace SnakeAndLadder
         Random r = new Random();
         int startPosition = 0;
         int endPosition = 100;
+        int diceCount = 0;
        
         public void yourOption()
         {
             while (startPosition <= endPosition)
             {
-
+                diceCount++;
                 switch (r.Next(0, 3))
                 {
                     case 0:
@@ -54,6 +55,7 @@ namespace SnakeAndLadder
                 }
             }
             Console.WriteLine("Out of loop" + startPosition);
+            Console.WriteLine("Out of loop" + diceCount);
         }
 
 	}
