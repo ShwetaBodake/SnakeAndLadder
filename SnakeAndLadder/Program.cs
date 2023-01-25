@@ -6,7 +6,7 @@ class Program
         {
             Console.WriteLine("-------------WelCome to Snake And Ladder Game-----------");
             SnakeLadderStartPosition s = new SnakeLadderStartPosition();
-            Console.WriteLine(s.rollDice());
+            s.yourOption();
 
         }
     }
