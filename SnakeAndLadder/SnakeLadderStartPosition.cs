@@ -14,12 +14,26 @@ namespace SnakeAndLadder
 
                 switch (r.Next(0, 3))
                 {
-                    case 1:
+                    case 0:
                         Console.WriteLine("Ladder");
-                        startPosition = startPosition + r.Next(0, 7);
+                        int ladderDice = r.Next(1, 7);
+                        if (startPosition + ladderDice == 100)
+                        {
+                            Console.WriteLine("Win" + startPosition);
+                            break;
+                        }
+                        else if (startPosition + ladderDice < 100)
+                        {
+                            startPosition = startPosition + ladderDice;
+                            Console.WriteLine(startPosition);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Can not go beyoud 100");
+                        }
                         break;
-                    case 2:
-                        int dice = r.Next(0, 7);
+                    case 1:
+                        int dice = r.Next(1, 7);
                         Console.WriteLine("Snake");
                         if (startPosition <= dice)
                         {
@@ -28,16 +42,16 @@ namespace SnakeAndLadder
                         else
                         {
                             startPosition = startPosition - dice;
+                            Console.WriteLine(startPosition);
                         }
                         break;
-                    case 3:
+                    case 2:
                         Console.WriteLine("No Play");
                         break;
                     default:
                         Console.WriteLine("In default");
                         break;
                 }
-                Console.WriteLine(startPosition);
             }
             Console.WriteLine("Out of loop" + startPosition);
         }
